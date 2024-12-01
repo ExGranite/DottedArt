@@ -22,7 +22,7 @@ public class UserGui  extends JFrame {
 		
 		p = new JPanel(new GridLayout(7, 1));
 		setTitle("DottedArt Gallery");
-        setSize(400, 800);
+        setSize(400, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	    JLabel extra = new JLabel();
@@ -30,8 +30,8 @@ public class UserGui  extends JFrame {
         JLabel message = new JLabel();
         message.setText("Welcome to user dashboard!!");
         p.add(message);
-        p.add(extra);
-        p.add(extra);
+//        p.add(extra);
+//        p.add(extra);
         
         message = new JLabel();
         message.setText("Owned Art!!");
@@ -78,7 +78,7 @@ public class UserGui  extends JFrame {
         JScrollPane sp = new JScrollPane(j);
         p.add(sp);
         
-        p.add(extra);
+//        p.add(extra);
 		
 		
         

@@ -10,14 +10,12 @@ public class CategorizationAgent extends Agent {
     protected void setup() {
         System.out.println("Categorization Agent " + getLocalName() + " is ready.");
 
-        // Add a behavior to handle categorization requests
         addBehaviour(new CyclicBehaviour(this) {
             public void action() {
                 MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
                 ACLMessage msg = myAgent.receive(mt);
                 if (msg != null) {
                     String content = msg.getContent();
-                    // Process the categorization request
                     String categorizedData = categorizeArtwork(content);
                     ACLMessage reply = msg.createReply();
                     reply.setPerformative(ACLMessage.INFORM);
@@ -31,7 +29,6 @@ public class CategorizationAgent extends Agent {
     }
 
     private String categorizeArtwork(String artworkDetails) {
-        // Simulate categorization logic
         return "Categorized artwork: " + artworkDetails + " as 'Abstract'";
     }
 

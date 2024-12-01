@@ -19,10 +19,10 @@ public class GalleryGui  extends JFrame {
 	GalleryGui(Connection c, SessionAgent s, int user_id, String u_type) {
 //		super(sa.getLocalName());
 //		myAgent = sa;
-		
-		p = new JPanel(new GridLayout(7, 1));
+//		
+		p = new JPanel(new GridLayout(10, 1));
 		setTitle("DottedArt Gallery");
-        setSize(400, 800);
+        setSize(400, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 	    JLabel extra = new JLabel();
@@ -30,8 +30,8 @@ public class GalleryGui  extends JFrame {
         JLabel message = new JLabel();
         message.setText("Welcome to Gallery!!");
         p.add(message);
-        p.add(extra);
-        p.add(extra);
+//        p.add(extra);
+//        p.add(extra);
         
 //        message = new JLabel();
 //        message.setText("Owned Art!!");
@@ -76,7 +76,7 @@ public class GalleryGui  extends JFrame {
 			}
 	        
 	        JTable j = new JTable(data, name);
-	        j.setBounds(40, 20, 600, 700);
+	        j.setBounds(20, 20, 400, 400);
 	        JScrollPane sp = new JScrollPane(j);
 	        p.add(sp);
 	        
@@ -119,14 +119,9 @@ public class GalleryGui  extends JFrame {
 		}
         
         JTable j = new JTable(data, name);
-        j.setBounds(40, 20, 600, 700);
+        j.setBounds(20, 20, 400, 400);
         JScrollPane sp = new JScrollPane(j);
         p.add(sp);
-        
-        p.add(extra);
-		
-		
-        
 		
 	    JButton submit = new JButton("BUY >>");
 	    submit.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -142,7 +137,8 @@ public class GalleryGui  extends JFrame {
           	  	startgui.display();
 	    	}
 	    });
-	    
+
+        p.add(extra);
 	    message.setText("Sold Artwork");
         p.add(message);
         ct = new CreateTable();
@@ -176,7 +172,7 @@ public class GalleryGui  extends JFrame {
 				i += 1;
 			}
 		} catch (Exception e) {
-			
+			e.printStackTrace();
 		}
         
         j = new JTable(data, name);

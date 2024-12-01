@@ -12,14 +12,12 @@ public class PaymentAgent extends Agent {
     protected void setup() {
         System.out.println("Payment Agent " + getLocalName() + " is ready.");
 
-        // Add a behavior to handle incoming payment requests
         addBehaviour(new CyclicBehaviour(this) {
             public void action() {
                 MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
                 ACLMessage msg = myAgent.receive(mt);
                 if (msg != null) {
                     String content = msg.getContent();
-                    // Process the payment request
                     if (processPayment(content)) {
                         ACLMessage reply = msg.createReply();
                         reply.setPerformative(ACLMessage.INFORM);
@@ -39,16 +37,13 @@ public class PaymentAgent extends Agent {
     }
 
     private boolean processPayment(String paymentDetails) {
-        // Simulate payment processing logic
-        // Here, you could parse the paymentDetails and validate the card information
-        // For this example, we will assume payment is always successful if details are provided
         String[] details = paymentDetails.split(",");
-        if (details.length == 4) { // Assume 4 details: card_number, card_name, card_month, card_year
-            transactionAmount = 100.00; // Example fixed amount
+        if (details.length == 4) {
+            transactionAmount = 100.00;
             System.out.println("Processing payment of $" + transactionAmount + " for card " + details[0]);
-            return true; // Simulating successful payment
+            return true;
         }
-        return false; // Invalid payment details
+        return false;
     }
 
     protected void takeDown() {

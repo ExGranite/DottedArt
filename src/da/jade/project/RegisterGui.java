@@ -117,7 +117,7 @@ public class RegisterGui extends JFrame {
 	    		}
 	    		sql = "INSERT INTO ACCOUNT (user_id, user_type, fname, lname, email, password) VALUES ("+user_id+", '"+u_type+"', '"+first+"', '"+last+"', '"+email+"', '"+pass+"');";
 	    		ct.editData(c, sql);
-	    		sql = "SELECT * FROM ACCOUNT WHERE user_id = '"+user_id+"'";
+	    		sql = "SELECT * FROM ACCOUNT WHERE user_id = "+user_id+";";
 	    		rs = ct.getData(c, sql);
 	    		String newLine = System.getProperty("line.separator");
 	    		if (rs.next()) {
