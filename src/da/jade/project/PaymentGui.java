@@ -95,6 +95,7 @@ public class PaymentGui extends JFrame {
 	    		String newLine = System.getProperty("line.separator");
 	    		ct = new CreateTable();
 	    		String sql = "SELECT art_id FROM ARTWORK WHERE art_id = "+id+" AND status = 'Unsold';";
+	    		s.paySubmit(sql);
 	    		ResultSet rs = ct.getData(c, sql);
 	    		if (rs.next()) {
 	    			sql = "UPDATE ARTWORK SET status = 'Sold', owner_id = "+user_id+" WHERE art_id = "+id+";";

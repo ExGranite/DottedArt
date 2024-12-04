@@ -122,11 +122,12 @@ public class UserGui  extends JFrame {
 	    submit.addActionListener(new ActionListener() {
 	    	@Override
             public void actionPerformed(ActionEvent e) {
-	    		JComponent comp = (JComponent) e.getSource();
-          	  	Window win = SwingUtilities.getWindowAncestor(comp);
-          	  	win.dispose();
-          	  	GalleryGui gui = new GalleryGui(c, s, user_id, u_type);
-          	  	gui.display();
+	    		s.loadGallery(c, s, user_id, u_type, e);
+//	    		JComponent comp = (JComponent) e.getSource();
+//          	  	Window win = SwingUtilities.getWindowAncestor(comp);
+//          	  	win.dispose();
+//          	  	GalleryGui gui = new GalleryGui(c, s, user_id, u_type);
+//          	  	gui.display();
 	    	}
 	    });
 	}

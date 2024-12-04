@@ -24,22 +24,24 @@ public class MainGui extends JFrame {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	JComponent comp = (JComponent) e.getSource();
-          	  	Window win = SwingUtilities.getWindowAncestor(comp);
-          	  	win.dispose();
-                LoginGui gui = new LoginGui(c, s);
-                gui.display();
+            	s.login(c, s, e);
+//            	JComponent comp = (JComponent) e.getSource();
+//          	  	Window win = SwingUtilities.getWindowAncestor(comp);
+//          	  	win.dispose();
+//                LoginGui gui = new LoginGui(c, s);
+//                gui.display();
             }
         });
         
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	JComponent comp = (JComponent) e.getSource();
-          	  	Window win = SwingUtilities.getWindowAncestor(comp);
-          	  	win.dispose();
-                RegisterGui gui = new RegisterGui(c, s);
-                gui.display();
+            	s.register(c, s, e);
+//            	JComponent comp = (JComponent) e.getSource();
+//          	  	Window win = SwingUtilities.getWindowAncestor(comp);
+//          	  	win.dispose();
+//                RegisterGui gui = new RegisterGui(c, s);
+//                gui.display();
             }
         });
 	}

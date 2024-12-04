@@ -121,12 +121,7 @@ public class RegisterGui extends JFrame {
 	    		rs = ct.getData(c, sql);
 	    		String newLine = System.getProperty("line.separator");
 	    		if (rs.next()) {
-//	    			JComponent comp = (JComponent) e.getSource();
-//	          	  	Window win = SwingUtilities.getWindowAncestor(comp);
-//	          	  	win.dispose();
 	    			message.setText("Registration Successful!! Go back and login.");
-//	    			gui = new UserGui();
-//	    			gui.display();
 	    		} else {
 	    			message.setText("Error!! Try Again...");
 	    		} } catch (Exception er) {

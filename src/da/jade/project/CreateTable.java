@@ -95,19 +95,19 @@ public class CreateTable {
          System.out.println("Opened database successfully");
 
 //         createAll(c);
-//         String t1 = "INSERT INTO ARTWORK (art_id, name, description, genre, tags, price, status, artist_id, owner_id) VALUES (0, 'Art1', 'First Art', 'Smith', 'john@gmail.com', '1234');";
+//         String t1 = "DELETE FROM ARTWORK WHERE art_id = 7;";
 //         String t2 = "INSERT INTO CATEGORY (category_id, art_id, tags) VALUES (2, 1, 'Wet');";
 //         String t3 = "UPDATE CATEGORY set ART_ID = 1 where TAGS = 'Wet';";
 //         editData(c, t1);
 //         editData(c, t1);
-         ResultSet rs = getData(c, "SELECT * FROM ACCOUNT WHERE USER_ID = '1'");
-         while (rs.next()) {
-        	 int user_id = rs.getInt("user_id");
-//        	 int art_id = rs.getInt("art_id");
-//        	 String tags = rs.getString("tags");
-        	 System.out.printf("ID: %d.%n", user_id);
-         }
-         System.out.println("Data is " + rs);
+//         ResultSet rs = getData(c, "SELECT * FROM ACCOUNT WHERE USER_ID = '1'");
+//         while (rs.next()) {
+//        	 int user_id = rs.getInt("user_id");
+////        	 int art_id = rs.getInt("art_id");
+////        	 String tags = rs.getString("tags");
+//        	 System.out.printf("ID: %d.%n", user_id);
+//         }
+//         System.out.println("Data is " + rs);
          
          
          c.close();
