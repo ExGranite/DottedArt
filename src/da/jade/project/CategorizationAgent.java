@@ -14,7 +14,7 @@ public class CategorizationAgent extends Agent {
     protected void setup() {
         System.out.println("Categorization Agent " + getLocalName() + " is ready.");
         DatabaseManager db = new DatabaseManager();
-        Connection c = null;
+        Connection c = db.connect();
         CreateTable ct = new CreateTable();
         addBehaviour(new CyclicBehaviour(this) {
             public void action() {

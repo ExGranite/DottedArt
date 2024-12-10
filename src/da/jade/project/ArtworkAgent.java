@@ -14,7 +14,7 @@ public class ArtworkAgent extends Agent {
     protected void setup() {
         System.out.println("Artwork Agent " + getLocalName() + " is ready.");
         DatabaseManager db = new DatabaseManager();
-        Connection c = null;
+        Connection c = db.connect();
         CreateTable ct = new CreateTable();
         addBehaviour(new CyclicBehaviour(this) {
             public void action() {
@@ -25,7 +25,7 @@ public class ArtworkAgent extends Agent {
             			try {
 							String sql = msg.getContent();
 							ct.editData(c, sql);
-								actionCount = 1;
+							actionCount = 1;
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
